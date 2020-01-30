@@ -2,7 +2,7 @@
  - EC OAuth2 Store Provider Web UI.
   
 ## Runtime Requirement:
-* agent v1.1beta [#1686+](https://github.com/Enterprise-connect/ec-x-sdk/releases/tag/v1.1beta.fukuoka.1686)
+* agent v1.1beta [#2723+](https://github.com/Enterprise-connect/sdk/releases/tag/v1.1beta.fukuoka.2723)
 
 ## Development Requirement:
 * [Facebook REACT v16+](https://reactjs.org/docs/getting-started.html#try-react)
