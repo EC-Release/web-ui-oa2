@@ -56,6 +56,8 @@ class OALogin extends React.Component {
     	console.log(this.inputResponseType.value);
     	this.inputLoginHint = {value:params.get("login_hint")};
     	console.log(this.inputLoginHint.value);
+    	this.inputClientId = {value:params.get("client_id")};
+    	console.log(this.inputLoginHint.value);
     	if (this.inputLoginHint.value!=null) {
     	    this.inputLoginHint.value = JSON.parse(this.inputLoginHint.value);
     	}
@@ -163,6 +165,7 @@ class OALogin extends React.Component {
       		    <button className={this.state.elements.btn_continue.classNames} name="btn_continue" type="submit">{this.state.elements.btn_continue.value}</button>
       		    <p className="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
           		<input type="hidden" name="scope" value={this.inputScope.value} />
+          		<input type="hidden" name="client_id" value={this.inputClientId.value} />
           		<input type="hidden" name="response_type" value={this.inputResponseType.value} />
           		<input type="hidden" name="redirect_uri" value={this.inputRedirectURL.value} />
       		</form>
