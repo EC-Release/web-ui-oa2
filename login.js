@@ -57,7 +57,7 @@ class OALogin extends React.Component {
     	this.inputLoginHint = {value:params.get("login_hint")};
     	console.log(this.inputLoginHint.value);
     	this.inputClientId = {value:params.get("client_id")};
-    	console.log(this.inputLoginHint.value);
+    	console.log(this.inputClientId.value);
     	if (this.inputLoginHint.value!=null) {
     	    this.inputLoginHint.value = JSON.parse(this.inputLoginHint.value);
     	}
