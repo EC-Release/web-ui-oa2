@@ -148,7 +148,7 @@ class OALogin extends React.Component {
     render() {
       	return (
       		<form className="form-signin" method="POST" >
-      				<h1 className="h3 mb-3 font-weight-normal">DC OAuth Sign In</h1>
+      				<h1 className="h3 mb-3 font-weight-normal">EC OAuth Sign In</h1>
       		    <div className={this.state.elements.message.classNames} role="alert">
       		        { this.state.elements.message.value }
       	      </div>
