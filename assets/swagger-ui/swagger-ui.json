@@ -12,10 +12,42 @@
   "paths": {
     "/oauth/token": {
       "post": {
-        "tags": [
-          "Token"
-        ],
         "summary": "Get the oauth token",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Basic Authorization token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "grant_type",
+            "in": "body",
+            "required": true,
+            "description": "client_credentials"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Client Script"
+          },
+          "400": {
+            "description": "Invalid value"
+          }
+        }
+      }
+    },
+    "/getUserDetails": {
+      "post": {
+        "summary": "Get the user(license) details",
         "description": "",
         "consumes": [
           "application/json"
