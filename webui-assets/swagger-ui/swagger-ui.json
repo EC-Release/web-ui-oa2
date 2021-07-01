@@ -1,0 +1,84 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "EC oa2 backend APIs",
+    "version": "1.0.0",
+    "title": "Admin OA2"
+  },
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/oauth/token": {
+      "post": {
+        "summary": "Get the oauth token",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Basic Authorization token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "grant_type",
+            "in": "body",
+            "required": true,
+            "description": "client_credentials"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Client Script"
+          },
+          "400": {
+            "description": "Invalid value"
+          }
+        }
+      }
+    },
+    "/getUserDetails/devId/": {
+      "post": {
+        "summary": "Get the user(license) details",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Basic Authorization token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "devId",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "key name to get the details from database"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Client Script"
+          },
+          "400": {
+            "description": "Invalid value"
+          }
+        }
+      }
+    }
+}
