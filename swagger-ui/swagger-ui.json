@@ -1,9 +1,9 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "EC oa2 backend APIs",
+    "description": "DC Security Domain Controller APIs",
     "version": "1.0.0",
-    "title": "Admin OA2"
+    "title": "SDC APIs"
   },
   "basePath": "/",
   "schemes": [
