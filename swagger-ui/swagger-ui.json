@@ -13,7 +13,7 @@
     "/introspect":{
       "post": {
         "tags": [
-          "verification"
+          "validation-api"
         ],
         "summary": "validate token detail",
         "description":"",
@@ -54,6 +54,9 @@
     },
     "/oauth/token": {
       "post": {
+        "tags": [
+          "oauth-api"
+        ],
         "summary": "Get the oauth token",
         "description": "",
         "consumes": [ 
@@ -90,7 +93,7 @@
     "/users/{userId}/": {
       "get": {
         "tags": [
-          "user"
+          "user-api"
         ],
         "summary": "Get the user/license details",
         "description": "",
