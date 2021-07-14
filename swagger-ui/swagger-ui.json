@@ -12,6 +12,9 @@
   "paths": {
     "/introspect":{
       "post": {
+        "tags": [
+          "verification"
+        ],
         "summary": "validate token detail",
         "description":"",
         "consumes": [
@@ -40,12 +43,7 @@
           "200": {
            "description": "the token detail",
            "schema": {
-              "type": "object",
-              "properties": {
-                "status": {
-                  "type": "string"
-                }
-              }
+              "type": "object"
             } 
           },
           "501": {
@@ -89,37 +87,33 @@
         }
       }
     },
-    "/getUserDetails/devId/": {
-      "post": {
-        "summary": "Get the user(license) details",
-        "description": "",
-        "consumes": [
-          "application/json"
+    "/users/{userId}/": {
+      "get": {
+        "tags": [
+          "user"
         ],
+        "summary": "Get the user/license details",
+        "description": "",
         "produces": [
           "application/json"
         ],
         "parameters": [
           {
-            "in": "header",
-            "name": "Authorization",
-            "description": "Basic Authorization token",
+            "in": "path",
+            "name": "userId",
+            "description": "The license id; in OIDC mode, the user id refers to the id in the OAuth mapping. E.g. SSO ID.",
             "required": true,
             "type": "string"
           },
-          {
-            "name": "devId",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "description": "key name to get the details from database"
-          }
         ],
         "responses": {
           "200": {
-            "description": "Client Script"
+           "description": "the user/license detail",
+           "schema": {
+              "type": "object"
+            }
           },
-          "400": {
+          "501": {
             "description": "Invalid value"
           }
         }
