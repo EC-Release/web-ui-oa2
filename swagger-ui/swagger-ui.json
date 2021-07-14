@@ -10,6 +10,47 @@
     "https"
   ],
   "paths": {
+    "/introspect":{
+      "post": {
+        "summary": "validate token detail",
+        "description":"",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Authorization",
+            "description": "Bearer *your_token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "token",
+            "in": "body",
+            "required": true,
+            "type": "string",
+            "description": "token to be validated."
+          }
+        ],
+        "responses": {
+          "200": {
+           "description": "the token detail",
+           "schema": {
+              "type": "object",
+              "properties": {
+                "status": {
+                  "type": "string"
+                }
+              }
+            } 
+          },
+          "501": {
+            "description": "Invalid value"
+          }
+        }
+      }
+    },
     "/oauth/token": {
       "post": {
         "summary": "Get the oauth token",
