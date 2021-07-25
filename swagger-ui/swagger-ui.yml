@@ -17,7 +17,7 @@ securityDefinitions:
     authorizationUrl: https://ec-oauth-sso.run.aws-usw02-dev.ice.predix.io/oauth/authorize
     tokenUrl: https://ec-oauth-sso.run.aws-usw02-dev.ice.predix.io/oauth/token
     description: OAuth 2.0 with Client Credentias Grant type
-    #scopes:
+    scopes: []
     #  read: Grants read access
     #  write: Grants write access
     #  admin: Grants read and write access to administrative information
@@ -33,7 +33,7 @@ paths:
       produces:
         - application/json
       tags:
-        - OAuth
+        - OAuth2
       parameters:
         - name: token
           type: string
