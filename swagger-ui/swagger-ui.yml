@@ -42,11 +42,11 @@ paths:
           required: true
       security:
         - OAuth2: []
-      #responses:
-      #  200:
-      #    description: Authorisation token (Bearer)
-      #    schema:
-      #      type: "object"
+      responses:
+        200:
+          description: Authorisation token (Bearer)
+          schema:
+            type: "object"
           #examples:
           #  application/json: |-
           #    {                
@@ -54,10 +54,10 @@ paths:
           #       "token_type":"Bearer",
           #       "expires_in":3600,
           #     }
-      #  400: 
-      #    description: As per RFC authorisation server responds with 400 in case of error
-      #    schema:
-      #      type: "object"
+        400: 
+          description: As per RFC authorisation server responds with 400 in case of error
+          schema:
+            type: "object"
           #examples:
           #  application/json: |-
           #    {
