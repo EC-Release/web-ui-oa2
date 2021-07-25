@@ -36,6 +36,7 @@ paths:
         - OAuth
       parameters:
         - name: token
+          type: string
           in: formData
           description: token to be validated
           required: true
