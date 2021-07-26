@@ -220,5 +220,4 @@ definitions:
         description: Human-readable text providing additional information
       error_uri:
         type: string
-        description: A URI identifying a human-readable web page with
-         information about the error
+        description: A URI identifying a human-readable web page with information about the error
