@@ -28,7 +28,7 @@ paths:
       description: |
         Create and register new scope with SDC instance.
       tags:
-        - Scope Management  
+        - Scope
       security:
         - OAuth2: []
     get:
@@ -36,7 +36,7 @@ paths:
       description: |
         Get current scopes list which registered with SDC instance.
       tags:
-        - Scope Management
+        - Scope
       security:
         - OAuth2: []
     
@@ -46,7 +46,7 @@ paths:
       description: |
         Update scope detail by scope ID registered with SDC instance.
       tags:
-        - Scope Management
+        - Scope
       security:
         - OAuth2: []
     delete:
@@ -54,7 +54,7 @@ paths:
       description: |
         Remove existing scope registered with SDC instance.    
       tags:
-        - Scope Management
+        - Scope
       security:
         - OAuth2: []
     get:
@@ -62,10 +62,18 @@ paths:
       description: |
         Get existing scope detail registered with SDC instance.    
       tags:
-        - Scope Management
+        - Scope
       security:
         - OAuth2: []
-    
+  /{rev}/reboot:
+    post:
+      summary: Restart the SDC instance
+      description: |
+        Restart the SDC instance immediately.
+      tags:
+        - System
+      security:
+        - OAuth2: []      
   /{rev}/cert:
     post:
       summary: Add x509 keypair
