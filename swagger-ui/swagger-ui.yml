@@ -74,7 +74,7 @@ paths:
         - System
       security:
         - OAuth2: []      
-  /{rev}/cert:
+  /{rev}/licenses:
     post:
       summary: Add x509 keypair
       description: |
