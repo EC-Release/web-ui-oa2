@@ -123,7 +123,7 @@ paths:
         - OAuth2: []
       responses:
         200:
-          description: License adder
+          description: License list
           schema:
             type: "object"
     post:
