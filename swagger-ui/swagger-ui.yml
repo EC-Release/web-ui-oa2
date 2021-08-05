@@ -95,7 +95,7 @@ paths:
           description: License removal
           schema:
             type: "object"
- /{rev}/licenses:
+  /{rev}/licenses:
     get:
       summary: Get list of registered licenses
       description: |
