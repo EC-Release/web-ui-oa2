@@ -74,7 +74,43 @@ paths:
         - System
       security:
         - OAuth2: []      
-  /{rev}/licenses:
+  /{rev}/licenses/{licenseId}:
+    delete:
+      summary: Remove a license from the SDC instance.
+      description: |
+        Remove runtime in-memory user detail
+      tags:
+        - Tenancy
+      security:
+        - OAuth2: []
+      parameters: 
+        - in: path
+          name: licenseId
+          description: |
+            The license id to be removed from the SDC instance
+          required: true
+          type: string
+      responses:
+        205:
+          description: License removal
+          schema:
+            type: "object"
+ /{rev}/licenses:
+    get:
+      summary: Get list of registered licenses
+      description: |
+        Get a list of registered licenses currently w/ the SDC instance.
+      produces:
+        - application/json
+      tags:
+        - Tenancy
+      security:
+        - OAuth2: []
+      responses:
+        200:
+          description: License adder
+          schema:
+            type: "object"
     post:
       summary: Add x509 keypair
       description: |
@@ -111,42 +147,12 @@ paths:
           required: true
           type: string
       security:
-        - OAuth2: []  
-  /users/{userId}:
-    delete:
-      summary: Remove user
-      description: |
-        Delete runtime in-memory user detail
-      tags:
-        - Tenancy
-      security:
-        - OAuth2: []      
-    put:
-      summary: Update user
-      description: |
-        Update the runtime in-memory user detail.
-      tags:
-        - Tenancy
-      security:
-        - OAuth2: []      
-    get:
-      summary: Get user detail
-      description: |
-        Fetch OIDC user detail when avaialble. Otherwise it will fetch OAEP detail instead
-      produces:
-        - application/json
-      tags:
-        - Tenancy
-      parameters: 
-        - in: path
-          name: userId
-          description: |
-            The license id; in OIDC mode, the user id refers to the id in the OAuth mapping.
-            E.g. SSO ID.
-          required: true
-          type: string
-      security:
         - OAuth2: []
+      responses:
+        200:
+          description: License adder
+          schema:
+            type: "object"
   /introspect:
     post:
       summary: Validate bearer token
