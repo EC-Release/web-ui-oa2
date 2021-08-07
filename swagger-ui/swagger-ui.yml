@@ -73,7 +73,79 @@ paths:
       tags:
         - System
       security:
-        - OAuth2: []      
+        - OAuth2: []
+  /{rev}/user:
+    get:
+      summary: Get the current user
+      description: |
+        Get the current licensed user associated with the OAuth2 authentication.
+      produces:
+        - application/json
+      tags:
+        - User
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
+      security:
+        - OAuth2: []
+      responses:
+        200:
+          description: The current user detail
+          schema:
+            type: "object"
+    put:
+      summary: Update the current user
+      description: |
+        Update the current authenticated user in the license.
+      produces:
+        - application/json
+      tags:
+        - User
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
+      security:
+        - OAuth2: []        
+      responses:
+        200:
+          description: The updated user detail in the license.
+          schema:
+            type: "object"
+  /{rev}/users:
+    get:
+      summary: Get list of OIDC users
+      description: |
+        Get list of authenticated OIDC users curently registered with the SDC instance
+      produces:
+        - application/json
+      tags:
+        - User
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
+      security:
+        - OAuth2: []
+      responses:
+        200:
+          description: OIDC User list
+          schema:
+            type: "object"
+            
   /{rev}/licenses/{licenseId}:
     delete:
       summary: Remove a license from the SDC instance.
