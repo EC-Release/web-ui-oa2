@@ -82,6 +82,11 @@ paths:
           type: string
       security:
         - OAuth2: []
+      responses:
+        200:
+          description: The seeder list
+          schema:
+            type: "object"
   /{rev}/reboot:
     post:
       summary: Restart the SDC instance
@@ -99,6 +104,11 @@ paths:
           type: string
       security:
         - OAuth2: []
+      responses:
+        200:
+          description: Reboot status
+          schema:
+            type: "object"
   /{rev}/user:
     get:
       summary: Get the current user
