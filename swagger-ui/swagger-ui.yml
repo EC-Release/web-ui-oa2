@@ -129,7 +129,7 @@ paths:
       description: |
         Create and register new scope index with SDC instance.
       tags:
-        - Scope
+        - OIDC-Scope Index
       parameters: 
         - in: path
           name: rev
@@ -153,7 +153,7 @@ paths:
           required: true
           type: string
       tags:
-        - Scope
+        - OIDC-Scope Index
       security:
         - OAuth2: []
     
@@ -163,7 +163,7 @@ paths:
       description: |
         Update scope-index detail by scope-index ID registered with SDC instance.
       tags:
-        - Scope
+        - OIDC-Scope Index
       parameters: 
         - in: path
           name: rev
@@ -185,7 +185,7 @@ paths:
       description: |
         Remove existing scope-index registered with SDC instance.    
       tags:
-        - Scope
+        - OIDC-Scope Index
       parameters: 
         - in: path
           name: rev
@@ -221,7 +221,7 @@ paths:
           required: true
           type: string
       tags:
-        - Scope
+        - OIDC-Scope Index
       security:
         - OAuth2: []
   /{rev}/seeds:
