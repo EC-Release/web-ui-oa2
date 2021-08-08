@@ -22,13 +22,21 @@ securityDefinitions:
     #  write: Grants write access
     #  admin: Grants read and write access to administrative information
 paths:
-  /scopes:
+  /{rev}/scopes:
     post:
       summary: Create new scope
       description: |
         Create and register new scope with SDC instance.
       tags:
         - Scope
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string      
       security:
         - OAuth2: []
     get:
@@ -37,16 +45,38 @@ paths:
         Get current scopes list which registered with SDC instance.
       tags:
         - Scope
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
       security:
         - OAuth2: []
     
-  /scopes/{scopeId}:
+  /{rev}/scopes/{scopeId}:
     put:
       summary: Update scope from SDC
       description: |
-        Update scope detail by scope ID registered with SDC instance.
+        Update scope detail by scope ID registered with the scope.
       tags:
         - Scope
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
+        - in: path
+          name: scopeId
+          description: |
+            The scope id for the scope.
+          required: true
+          type: string
       security:
         - OAuth2: []
     delete:
@@ -55,12 +85,141 @@ paths:
         Remove existing scope registered with SDC instance.    
       tags:
         - Scope
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
+        - in: path
+          name: scopeId
+          description: |
+            The scope id for the scope.
+          required: true
+          type: string
       security:
         - OAuth2: []
     get:
       summary: Get scope detail from SDC
       description: |
         Get existing scope detail registered with SDC instance.    
+      tags:
+        - Scope
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
+        - in: path
+          name: scopeId
+          description: |
+            The scope id for the scope.
+          required: true
+          type: string
+      security:
+        - OAuth2: []
+  /{rev}/scopesIndex:
+    post:
+      summary: Create new scope-index
+      description: |
+        Create and register new scope index with SDC instance.
+      tags:
+        - Scope
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
+      security:
+        - OAuth2: []
+    get:
+      summary: Get current scope-index list
+      description: |
+        Get current scope-index list which registered with SDC instance.
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
+      tags:
+        - Scope
+      security:
+        - OAuth2: []
+    
+  /{rev}/scopesIndex/{scopeIdxId}:
+    put:
+      summary: Update scope-index in SDC
+      description: |
+        Update scope-index detail by scope-index ID registered with SDC instance.
+      tags:
+        - Scope
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
+        - in: path
+          name: scopeIdxId
+          description: |
+            The scope-index id for the scope-index.
+          required: true
+          type: string
+      security:
+        - OAuth2: []
+    delete:
+      summary: Delete scope-index in SDC
+      description: |
+        Remove existing scope-index registered with SDC instance.    
+      tags:
+        - Scope
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
+        - in: path
+          name: scopeIdxId
+          description: |
+            The scope-index id for the scope-index.
+          required: true
+          type: string
+      security:
+        - OAuth2: []
+    get:
+      summary: Get scope-index detail in SDC
+      description: |
+        Get existing scope-index detail registered with SDC instance.    
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string
+        - in: path
+          name: scopeIdxId
+          description: |
+            The scope-index id for the scope-index.
+          required: true
+          type: string
       tags:
         - Scope
       security:
