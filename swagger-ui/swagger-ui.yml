@@ -450,8 +450,8 @@ paths:
         - name: token
           type: string
           in: formData
-          description: token to be validated
-          required: true
+          description: token to be validated; when blank, the response will also include the refreshed bearer token. 
+          required: false
       security:
         - OAuth2: []
       responses:
