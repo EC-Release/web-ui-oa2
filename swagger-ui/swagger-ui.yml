@@ -445,7 +445,7 @@ paths:
       produces:
         - application/json
       tags:
-        - Validation
+        - OAuth Token
       parameters:
         - name: token
           type: string
