@@ -463,8 +463,6 @@ paths:
           in: formData
           description: License/Device ID associated w/ the hash
           required: true
-      security:
-        - OAuth2: []
       responses:
         200:
           description: Authorisation token (Bearer)
@@ -499,8 +497,6 @@ paths:
           in: formData
           description: License/Device ID associated w/ the hash
           required: true
-      security:
-        - OAuth2: []
       responses:
         200:
           description: Authorisation token (Bearer)
