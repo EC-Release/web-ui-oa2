@@ -434,7 +434,7 @@ paths:
           description: License adder
           schema:
             type: "object"
-  /{rev}/cipher/admin:
+  /{rev}/crypto/admin:
     post:
       summary: Admin Hash Conversion
       description: |
@@ -470,7 +470,7 @@ paths:
           description: Authorisation token (Bearer)
           schema:
             type: "object"
-  /{rev}/cipher/refreshed:
+  /{rev}/crypto/refreshed:
     post:
       summary: Refreshed Hash Conversion
       description: |
