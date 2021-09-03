@@ -228,7 +228,7 @@ paths:
     get:
       summary: Get seeders list
       description: |
-        Get seeders from the cluster.
+        Get seeders from the cluster. This request is only accessible to the owner of this instance.
       tags:
         - System
       parameters: 
@@ -434,6 +434,78 @@ paths:
           description: License adder
           schema:
             type: "object"
+  /{rev}/cipher/admin:
+    post:
+      summary: Admin Hash Conversion
+      description: |
+        Converting Owner hash to Admin hash.
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+      tags:
+        - Cryptography
+      parameters:
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string  
+        - name: hash
+          type: string
+          in: formData
+          description: owner hash to convert
+          required: true
+        - name: dev_id
+          type: string
+          in: formData
+          description: License/Device ID associated w/ the hash
+          required: true
+      security:
+        - OAuth2: []
+      responses:
+        200:
+          description: Authorisation token (Bearer)
+          schema:
+            type: "object"
+  /{rev}/cipher/refreshed:
+    post:
+      summary: Refreshed Hash Conversion
+      description: |
+        Converting Admin hash to Refreshed hash.
+      consumes:
+        - application/x-www-form-urlencoded
+      produces:
+        - application/json
+      tags:
+        - Cryptography
+      parameters:
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string  
+        - name: hash
+          type: string
+          in: formData
+          description: admin hash to convert
+          required: true
+        - name: dev_id
+          type: string
+          in: formData
+          description: License/Device ID associated w/ the hash
+          required: true
+      security:
+        - OAuth2: []
+      responses:
+        200:
+          description: Authorisation token (Bearer)
+          schema:
+            type: "object"         
   /introspect:
     post:
       summary: Validate bearer token
@@ -445,7 +517,7 @@ paths:
       produces:
         - application/json
       tags:
-        - OAuth Token
+        - Cryptography
       parameters:
         - name: token
           type: string
