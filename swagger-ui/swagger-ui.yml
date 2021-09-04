@@ -438,7 +438,7 @@ paths:
     post:
       summary: Admin Hash Conversion
       description: |
-        Converting Owner hash to Admin hash.
+        Converting Owner hash to Admin hash. Admin hash is utilised to bypass the passphrase run-time checking.
       consumes:
         - application/x-www-form-urlencoded
       produces:
@@ -472,7 +472,7 @@ paths:
     post:
       summary: Refreshed Hash Conversion
       description: |
-        Converting Admin hash to Refreshed hash.
+        Converting Owner hash to Refreshed hash.
       consumes:
         - application/x-www-form-urlencoded
       produces:
