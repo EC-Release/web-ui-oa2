@@ -433,75 +433,7 @@ paths:
         200:
           description: License adder
           schema:
-            type: "object"
-  /{rev}/crypto/admin:
-    post:
-      summary: Admin Hash Conversion
-      description: |
-        Converting Owner hash to Admin hash. Admin hash is utilised to bypass the passphrase run-time checking.
-      consumes:
-        - application/x-www-form-urlencoded
-      produces:
-        - application/json
-      tags:
-        - Cryptography
-      parameters:
-        - in: path
-          name: rev
-          default: v1.2beta
-          description: |
-            The revision for this SDC instance.
-          required: true
-          type: string  
-        - name: hash
-          type: string
-          in: formData
-          description: owner hash to convert
-          required: true
-        - name: dev_id
-          type: string
-          in: formData
-          description: License/Device ID associated w/ the hash
-          required: true
-      responses:
-        200:
-          description: Authorisation token (Bearer)
-          schema:
-            type: "object"
-  /{rev}/crypto/refreshed:
-    post:
-      summary: Refreshed Hash Conversion
-      description: |
-        Converting Owner hash to Refreshed hash.
-      consumes:
-        - application/x-www-form-urlencoded
-      produces:
-        - application/json
-      tags:
-        - Cryptography
-      parameters:
-        - in: path
-          name: rev
-          default: v1.2beta
-          description: |
-            The revision for this SDC instance.
-          required: true
-          type: string  
-        - name: hash
-          type: string
-          in: formData
-          description: admin hash to convert
-          required: true
-        - name: dev_id
-          type: string
-          in: formData
-          description: License/Device ID associated w/ the hash
-          required: true
-      responses:
-        200:
-          description: Authorisation token (Bearer)
-          schema:
-            type: "object"         
+            type: "object"        
   /introspect:
     post:
       summary: Validate bearer token
@@ -513,7 +445,7 @@ paths:
       produces:
         - application/json
       tags:
-        - Cryptography
+        - Tenancy
       parameters:
         - name: token
           type: string
