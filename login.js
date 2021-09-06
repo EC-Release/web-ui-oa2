@@ -38,8 +38,11 @@ class OALogin extends React.Component {
           		btn_continue: {
           		    classNames:"d-none",
           		    value:"Continue"
+          		},
+		        btn_cancel: {
+          		    classNames:"d-none",
+          		    value:"Cancel"
           		}
-
     	    }
     	}
 
@@ -84,9 +87,10 @@ class OALogin extends React.Component {
       	this.setState(op);
     }
 
-    //handleOnClick(event){
-
-    //}
+    handleOnCancel(event){
+	window.history.back();
+	event.preventDefault();
+    }
 
     handleOnClick(event) {
     	try{
@@ -120,11 +124,12 @@ class OALogin extends React.Component {
 
     		    var op=this.state.elements;
     		    op.message.classNames="alert alert-warning";
-    		    op.message.value=`the app (${this.inputLoginHint.value.origin}) is requesting the permission for the following scope: "${response.scope}" please click continue to grant the permission.`;
+    		    op.message.value=`the app (${this.inputLoginHint.value.origin}) is requesting the permission for the following scope(s): "${response.scope}" please click continue to grant the permission.`;
     		    op.usr_id.classNames="d-none";
     		    op.usr_pwd.classNames="d-none";
     		    op.btn_signin.classNames="d-none";
     		    op.btn_continue.classNames="btn btn-lg btn-primary btn-block";
+    		    op.btn_cancel.classNames="btn btn-lg btn-secondary btn-block";
     		    this.setState(op);
     		    //console.log(`token: ${JSON.stringify(response)}`);
     		})
@@ -163,6 +168,7 @@ class OALogin extends React.Component {
       		    </div>
       		    <button className={this.state.elements.btn_signin.classNames} name="btn_signin" onClick={this.handleOnClick} >{this.state.elements.btn_signin.value}</button>
       		    <button className={this.state.elements.btn_continue.classNames} name="btn_continue" type="submit">{this.state.elements.btn_continue.value}</button>
+      		    <button className={this.state.elements.btn_continue.classNames} name="btn_cancel" onClick={this.handleOnCancel}>{this.state.elements.btn_cancel.value}</button>
       		    <p className="mt-5 mb-3 text-muted">&copy; 2017-2019</p>
           		<input type="hidden" name="scope" value={this.inputScope.value} />
           		<input type="hidden" name="client_id" value={this.inputClientId.value} />
