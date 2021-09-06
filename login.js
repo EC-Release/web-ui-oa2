@@ -120,7 +120,7 @@ class OALogin extends React.Component {
 
     		    var op=this.state.elements;
     		    op.message.classNames="alert alert-warning";
-    		    op.message.value=`the app (${this.inputLoginHint.value.origin}) is requesting the permission for the following scope: \n \"${this.inputScope.value}\" \n please click continue to grant the permission.`;
+    		    op.message.value=`the app (${this.inputLoginHint.value.origin}) is requesting the permission for the following scope: <br /> \"${response.scope}\" <br /> please click continue to grant the permission.`;
     		    op.usr_id.classNames="d-none";
     		    op.usr_pwd.classNames="d-none";
     		    op.btn_signin.classNames="d-none";
