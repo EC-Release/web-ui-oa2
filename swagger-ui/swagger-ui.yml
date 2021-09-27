@@ -344,7 +344,7 @@ paths:
       description: |
         tag an OIDC user to the owner's license
       tags:
-        - Tenancy
+        - User
       consumes:
         - multipart/form-data
       parameters: 
