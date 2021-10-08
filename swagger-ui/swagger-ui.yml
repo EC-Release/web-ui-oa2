@@ -414,9 +414,8 @@ paths:
           description: |
             The transactional object key
           required: true
-          schema:
-            type: string
-            enum: [ec,tc,dive,globalscape,eks]            
+          type: string
+          enum: [ec,tc,dive,globalscape,eks]            
         - in: formData
           name: amount
           description: |
