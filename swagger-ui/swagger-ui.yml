@@ -465,7 +465,7 @@ paths:
     post:
       summary: Add an OIDC User
       description: |
-        Add a OIDC User associated with the transaction.
+        Associate an OIDC User with the transaction.
       tags:
         - Transaction
       consumes:
