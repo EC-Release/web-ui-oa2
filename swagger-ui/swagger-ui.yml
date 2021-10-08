@@ -410,6 +410,12 @@ paths:
           required: true
           type: string
         - in: formData
+          name: licensedId
+          description: |
+            The SDC licensed/device Id which this transaction is processed for.
+          required: true
+          type: string           
+        - in: formData
           name: objkey
           description: |
             The transactional object key
@@ -422,7 +428,7 @@ paths:
             The currency type used for this transaction
           required: true
           type: string
-          enum: [USD, INR, YEN, SDC]            
+          enum: [USD, INR, YEN, SDC]
         - in: formData
           name: amount
           description: |
@@ -521,7 +527,7 @@ paths:
           description: |
             The revision for this SDC instance.
           required: true
-          type: string        
+          type: string
         - in: path
           name: licenseId
           description: |
@@ -532,7 +538,7 @@ paths:
         205:
           description: License removal
           schema:
-            type: "object"
+            type: "object"  
   /{rev}/licenses:
     get:
       summary: Get list of registered licenses
