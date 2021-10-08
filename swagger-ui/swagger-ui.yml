@@ -410,7 +410,7 @@ paths:
           required: true
           type: string
         - in: formData
-          name: licensedId
+          name: licenseId
           description: |
             The SDC licensed/device Id which this transaction is made to.
           required: true
