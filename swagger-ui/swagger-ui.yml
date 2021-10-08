@@ -340,7 +340,7 @@ paths:
           schema:
             type: "object"
     post:
-      summary: Tag the owner\'s license with an OIDC user
+      summary: Tag the owner's license with an OIDC user
       description: |
         tag an OIDC user to the owner's license
       tags:
