@@ -369,7 +369,7 @@ paths:
           schema:
             type: "object" 
             
-  /{rev}/tr:
+  /{rev}/trs:
     get:
       summary: Get the list of transactions
       description: |
@@ -474,7 +474,7 @@ paths:
           description: the transaction detail
           schema:
             type: "object"
-  /{rev}/tr/{trid}/add/oidcuser:
+  /{rev}/trs/{trid}/add/oidcuser:
     post:
       summary: Add an OIDC User
       description: |
