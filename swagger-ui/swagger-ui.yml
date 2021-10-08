@@ -417,6 +417,13 @@ paths:
           type: string
           enum: [ec,tc,dive,globalscape,eks-sm, eks-lg,eks-mm,model-x]            
         - in: formData
+          name: currencyType
+          description: |
+            The currency type used for this transaction
+          required: true
+          type: string
+          enum: [USD, INR, YEN, SDC]            
+        - in: formData
           name: amount
           description: |
             The amount per each
