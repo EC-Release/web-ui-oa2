@@ -474,7 +474,6 @@ paths:
             The amount per each object (e.g. 150.00)
           required: true
           type: string
-          format: currency
         - in: formData
           name: qty
           default: 1
