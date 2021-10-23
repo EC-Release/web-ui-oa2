@@ -388,7 +388,6 @@ paths:
           type: string
         - in: path
           name: licid
-          default: v1.2beta
           description: |
             The licensed client/device id.
           required: true
@@ -419,7 +418,6 @@ paths:
           type: string
         - in: path
           name: oidcid
-          default: v1.2beta
           description: |
             The oidc user id.
           required: true
