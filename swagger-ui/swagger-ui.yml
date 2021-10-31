@@ -270,9 +270,9 @@ paths:
             type: "object"
   /{rev}/user:
     get:
-      summary: Get the current user
+      summary: Get the current user detail
       description: |
-        Get the current licensed user associated with the OAuth2 authentication.
+        Get the current user detail associated with the SDC. For OIDC authentication, the user detail is carried over from the OIDC vendor's system.
       produces:
         - application/json
       tags:
