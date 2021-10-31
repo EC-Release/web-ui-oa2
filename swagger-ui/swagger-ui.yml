@@ -472,10 +472,10 @@ paths:
           schema:
             type: "object"          
   /{rev}/trs/{trid}:
-    post:
+    get:
       summary: Get transaction detail
       description: |
-        Get a  specific transaction detail
+        Get a specific transaction detail
       tags:
         - Transaction
       parameters: 
