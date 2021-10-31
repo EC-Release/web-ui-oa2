@@ -248,9 +248,9 @@ paths:
             type: "object"
   /{rev}/reboot:
     post:
-      summary: Restart the SDC instance
+      summary: Restart the SDC instance (Owner)
       description: |
-        Restart the SDC instance immediately.
+        Restart the SDC instance immediately. This endpoint is accessible only to the owner of the instance.
       tags:
         - System
       parameters: 
@@ -506,7 +506,7 @@ paths:
       description: |
         Remove runtime in-memory user detail
       tags:
-        - Tenancy
+        - License
       security:
         - OAuth2: []
       parameters: 
@@ -536,7 +536,7 @@ paths:
       produces:
         - application/json
       tags:
-        - Tenancy
+        - License
       parameters: 
         - in: path
           name: rev
@@ -558,7 +558,7 @@ paths:
         Add additional x509 keypair for validation purpose. Adding the keypair will 
         enable an app's access via "Client Credential" grand type.
       tags:
-        - Tenancy
+        - License
       consumes:
         - multipart/form-data
       parameters: 
@@ -605,7 +605,7 @@ paths:
       produces:
         - application/json
       tags:
-        - Tenancy
+        - License
       parameters:
         - name: token
           type: string
