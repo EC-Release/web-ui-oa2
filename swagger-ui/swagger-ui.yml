@@ -453,7 +453,6 @@ paths:
           type: string
         - in: path
           name: trid
-          default: v1.2beta
           description: |
             The transaction ID.
           required: true
@@ -488,7 +487,6 @@ paths:
           type: string
         - in: path
           name: trid
-          default: v1.2beta
           description: |
             The transaction ID.
           required: true
