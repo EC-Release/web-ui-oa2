@@ -438,11 +438,11 @@ paths:
     post:
       summary: Add an OIDC User
       description: |
-        Associate an OIDC User with the transaction.
+        Associate an OIDC User with the transaction. The token must contains the original OIDC User ID of the transaction. 
       tags:
         - Transaction
       consumes:
-        - multipart/form-data
+        - application/x-www-form-urlencoded
       parameters: 
         - in: path
           name: rev
