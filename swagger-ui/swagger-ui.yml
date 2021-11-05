@@ -428,7 +428,7 @@ paths:
           description: the transaction detail
           schema:
             type: "object"
-  /{rev}/trs/{trid}/add/oidcuser:
+  /{rev}/trs/add/oidc-user-id:
     post:
       summary: Add an OIDC User
       description: |
@@ -445,7 +445,7 @@ paths:
             The revision for this SDC instance.
           required: true
           type: string
-        - in: path
+        - in: formData
           name: trid
           description: |
             The transaction ID.
