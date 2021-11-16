@@ -24,13 +24,15 @@ securityDefinitions:
 paths:
   /{rev}/scopes:
     post:
-      summary: Create new scope
+      summary: Create | Update new scope
       tags:
         - Scope
       consumes:
         - application/json
       description: |
           Create and register new scope with SDC instance.
+          
+          Update a scope if the scope exists.
       parameters: 
         - in: path
           name: rev
@@ -65,34 +67,14 @@ paths:
           type: string
       security:
         - OAuth2: []
-    put:
-      summary: Update scope from SDC
-      description: |
-        Update scope detail by scope ID registered with the scope.
-      tags:
-        - Scope
-      parameters: 
-        - in: path
-          name: rev
-          default: v1.2beta
-          description: |
-            The revision for this SDC instance.
-          required: true
-          type: string     
-        - in: formData
-          name: scope
-          description: |
-            The SDC licensed/device Id which this transaction is made to.
-          required: true
-          type: object
-      security:
-        - OAuth2: []
     delete:
       summary: Delete scope from SDC
       description: |
         Remove existing scope registered with SDC instance.    
       tags:
         - Scope
+      consumes:
+        - application/x-www-form-urlencoded
       parameters: 
         - in: path
           name: rev
@@ -107,15 +89,19 @@ paths:
             The SDC licensed/device Id which this transaction is made to.
           required: true
           type: string
-  /{rev}/scopeIdx:
+      security:
+        - OAuth2: []
+  /{rev}/scopeidx:
     post:
-      summary: Create a new set of OIDC scope index
+      summary: Create | Update a new set of OIDC scope index
       tags:
         - Scope
       consumes:
         - application/json
       description: |
           Create and register a new OIDC scope index with the SDC instance.
+          
+          Update a OIDC scope index if the index exists.
       parameters: 
         - in: path
           name: rev
