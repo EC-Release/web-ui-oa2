@@ -25,12 +25,12 @@ paths:
   /{rev}/scopes:
     post:
       summary: Create new scope
-      description: |
-        Create and register new scope with SDC instance.
       tags:
         - Scope
       consumes:
-        - application/x-www-form-urlencoded
+        - application/json
+      description: |
+          Create and register new scope with SDC instance.
       parameters: 
         - in: path
           name: rev
@@ -38,13 +38,14 @@ paths:
           description: |
             The revision for this SDC instance.
           required: true
-          type: string     
-        - in: formData
+          type: string  
+        - in: body
           name: scope
           description: |
             The SDC licensed/device Id which this transaction is made to.
           required: true
-          type: object
+          schema:
+            $ref: '#/definitions/Scope'
       security:
         - OAuth2: []
     get:
@@ -509,6 +510,15 @@ paths:
           #      "error":"invalid_request"
           #    }
 definitions:
+  Scope:
+    type: object
+    required:
+      - ScopeID
+    properties:
+      ScopeID:
+        type: string
+      ScopeIndex:
+        type: array
   Token:
     type: object
     properties:
