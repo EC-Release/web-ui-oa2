@@ -521,11 +521,11 @@ definitions:
           type: string
     example:
       sdc.guest.readonly:
-        - @sso.admin.1
-        - @sso.user.2
+        - "@sso.admin.1"
+        - "@sso.user.2"
       sdc.public.write:
-        - @sso.admin.3
-        - @sso.user.4
+        - "@sso.admin.3"
+        - "@sso.user.4"
   Token:
     type: object
     properties:
