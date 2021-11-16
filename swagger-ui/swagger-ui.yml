@@ -42,12 +42,13 @@ paths:
         - in: body
           name: scope
           description: |
-            The SDC licensed/device Id which this transaction is made to.
+            The scope setting belongs to the SDC licensed/device Id of which the token is associated with.
           required: true
           schema:
             $ref: '#/definitions/Scope'
       security:
         - OAuth2: []
+  
     get:
       summary: Get current scopes list
       description: |
@@ -106,6 +107,32 @@ paths:
             The SDC licensed/device Id which this transaction is made to.
           required: true
           type: string
+  /{rev}/scopeIdx:
+    post:
+      summary: Create a new set of OIDC scope index
+      tags:
+        - Scope
+      consumes:
+        - application/json
+      description: |
+          Create and register a new OIDC scope index with the SDC instance.
+      parameters: 
+        - in: path
+          name: rev
+          default: v1.2beta
+          description: |
+            The revision for this SDC instance.
+          required: true
+          type: string  
+        - in: body
+          name: scope
+          description: |
+            The OIDC scope index setting belongs to the SDC licensed/device Id of which the current bearer token is associated with.
+          required: true
+          schema:
+            $ref: '#/definitions/OIDCScopeIdx'
+      security:
+        - OAuth2: []
   /{rev}/seeds:
     get:
       summary: Get seeders list
@@ -523,9 +550,19 @@ definitions:
       sdc.guest.readonly:
         - "@sso.admin.1"
         - "@sso.user.2"
-      sdc.public.write:
-        - "@sso.admin.3"
-        - "@sso.user.4"
+  OIDCScopeIdx:
+    type: object
+    required:
+      - OIDCID
+    properties:
+      OIDCID:
+        type: array
+        items:
+          type: string
+    example:
+      212350774:
+        - "sdc.guest.readonly"
+        - "sdc.admin.write"
   Token:
     type: object
     properties:
