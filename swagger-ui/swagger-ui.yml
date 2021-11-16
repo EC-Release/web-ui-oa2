@@ -520,10 +520,7 @@ definitions:
       ScopeIndex:
         type: array
         items:
-          OIDC_SCOPE_1:
-            type: string
-          OIDC_SCOPE_2:
-            type: string
+          type: string
           
   Token:
     type: object
