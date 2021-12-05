@@ -67,6 +67,7 @@ paths:
           type: string
       security:
         - OAuth2: []
+  /{rev}/scopes/oidc/groupidx/{scp}:        
     delete:
       summary: Delete scope from SDC
       description: |
@@ -83,10 +84,10 @@ paths:
             The revision for this SDC instance.
           required: true
           type: string     
-        - in: formData
-          name: scope-name
+        - in: path
+          name: scp
           description: |
-            The SDC licensed/device Id which this transaction is made to.
+            Scope name to delete from the group index.
           required: true
           type: string
       security:
