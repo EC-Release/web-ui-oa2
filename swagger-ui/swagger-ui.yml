@@ -22,7 +22,7 @@ securityDefinitions:
     #  write: Grants write access
     #  admin: Grants read and write access to administrative information
 paths:
-  /{rev}/scopes:
+  /{rev}/scopes/oidc/groupidx:
     post:
       summary: Create | Update new scope
       tags:
@@ -91,7 +91,7 @@ paths:
           type: string
       security:
         - OAuth2: []
-  /{rev}/scopeidx:
+  /{rev}/scopes/oidc//useridx:
     post:
       summary: Create | Update a new set of OIDC scope index
       tags:
