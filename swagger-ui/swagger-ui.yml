@@ -50,7 +50,7 @@ paths:
             $ref: '#/definitions/Scope'
       security:
         - OAuth2: []
-  
+  /{rev}/scopes:
     get:
       summary: Get current scopes list
       description: |
