@@ -67,6 +67,11 @@ paths:
           type: string
       security:
         - OAuth2: []
+      responses:
+        200:
+          description: Client Scope Detail
+          schema:
+            $ref: '#/definitions/ClientScope'
   /{rev}/scopes/oidc/groupidx/{scp}:        
     delete:
       summary: Delete scope from SDC
@@ -545,6 +550,29 @@ paths:
           #      "error":"invalid_request"
           #    }
 definitions:
+  ClientScope:
+    type: object
+    required:
+      - ScopeID
+    properties:
+      LastUpdate: integer
+      ScopeIndex:
+        schema:
+        　 $ref: '#/definitions/Scope'
+      OIDCUserIdx:
+        schema:
+          $ref: '#/definitions/OIDCScopeIdx'      
+    example:
+      LastUpdate: 1638765317
+      ScopeIndex:
+        212350774:
+          - "sdc.guest.readonly"
+          - "sdc.admin.write"
+      OIDCUserIdx:
+        sdc.guest.readonly:
+          - "@sso.admin.1"
+          - "@sso.user.2"
+  
   Scope:
     type: object
     required:
