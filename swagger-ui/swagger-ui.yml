@@ -3,7 +3,7 @@ info:
   title: SDC API
   description: |
     Cert-based Security Domain Controller implements [OAuth 2.0](https://tools.ietf.org/html/rfc6749  "Docs") via LIBRA library.
-  version: "1.2.0-b"
+  version: "1.2-b"
 #host: ec-oauth-sso.run.aws-usw02-dev.ice.predix.io
 schemes:
   - http
@@ -37,7 +37,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -61,7 +61,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -83,7 +83,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -110,7 +110,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -134,7 +134,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -157,7 +157,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The seeder list.
           required: true
@@ -179,7 +179,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -203,7 +203,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -228,7 +228,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -258,7 +258,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -288,7 +288,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -363,7 +363,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -397,7 +397,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -427,7 +427,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -455,7 +455,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
@@ -479,7 +479,7 @@ paths:
       parameters: 
         - in: path
           name: rev
-          default: v1.2beta
+          default: 1.2-b
           description: |
             The revision for this SDC instance.
           required: true
